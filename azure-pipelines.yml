@@ -16,7 +16,7 @@ stages:
             mavenPomFile: 'pom.xml' 
             javaHomeOption: 'JDKVersion'
             jdkVersionOption: 'default'
-            options: compile exec:java -Dexec.mainClass="HelloWorld"
+            options: compile exec:java -Dexec.mainClass="main/HelloWorld"
             publishJUnitResults: true 
             testResultsFiles: '*/junit/TEST-*.xml'
 
