@@ -18,7 +18,7 @@ stages:
             jdkVersionOption: 'default'
             options: compile exec:java -Dexec.mainClass="HelloWorld"
             publishJUnitResults: true 
-            testResultsFiles: '*/junit/TEST-*.xml'
+            testResultsFiles: '/junit/TEST-*.xml'
 
 - stage: Script
   displayName: 'Script Stage'
@@ -29,7 +29,7 @@ stages:
       steps:
         - task: ShellScript@2
           inputs:
-            scriptPath: 'src/main/example.sh'
+            scriptPath: '/src/main/hello-world.sh'
 
     # Run a java script inline
     - job: ScriptFileInline
