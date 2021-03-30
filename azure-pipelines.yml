@@ -17,3 +17,21 @@ stages:
             javaHomeOption: 'JDKVersion'
             jdkVersionOption: 'default'
             options: compile exec:java -Dexec.mainClass="HelloWorld"
+
+- stage: Script
+  displayName: 'Script Stage'
+  jobs:
+
+    # Run a java script
+    - job: ScriptFile
+      steps:
+        - task: ShellScript@2
+          inputs:
+            scriptPath: 'src/main/example.sh'
+
+    # Run a java script inline
+    - job: ScriptFileInline
+      steps:
+        - script: |
+            echo Hello world!
+      displayName: 'Scripting inline'
