@@ -17,8 +17,6 @@ stages:
             javaHomeOption: 'JDKVersion'
             jdkVersionOption: 'default'
             options: compile exec:java -Dexec.mainClass="HelloWorld"
-            publishJUnitResults: true 
-            testResultsFiles: '*/junit/TEST-*.xml'
 
 - stage: Script
   displayName: 'Script Stage'

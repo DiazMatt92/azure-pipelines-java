@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="0" hostname="longan" name="pytest" skipped="0" tests="1" time="0.334" timestamp="2021-03-19T16:16:54.273805"><testcase classname="tests.test_test1" name="test_mock" time="0.001" /></testsuite></testsuites>
