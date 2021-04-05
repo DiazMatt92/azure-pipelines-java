@@ -1,39 +1,20 @@
 trigger:
-  - 'master'
-
+ - 'master'
+ 
 pool:
-  vmImage: 'ubuntu-18.04'
-
+ vmImage: 'ubuntu-18.04'
+ 
 stages:
-
+ 
 - stage: Build
   displayName: 'Build Stage'
   jobs:
-    - job: MaevenSetUp
-      steps:
-        - task: Maven@3
-          inputs:
-            mavenPomFile: 'pom.xml' 
-            javaHomeOption: 'JDKVersion'
-            jdkVersionOption: 'default'
-            options: compile exec:java -Dexec.mainClass="HelloWorld"
-            publishJUnitResults: true 
-            testResultsFiles: 'junit/TEST-results.xml'
-
-- stage: Script
-  displayName: 'Script Stage'
-  jobs:
-
-    # Run a java script
-    - job: ScriptFile
-      steps:
-        - task: ShellScript@2
-          inputs:
-            scriptPath: 'src/main/hello-world.sh'
-
-    # Run a java script inline
-    - job: ScriptFileInline
-      steps:
-        - script: |
-            echo Hello world!
-      displayName: 'Scripting inline'
+   - job: MaevenSetUp
+     steps:
+       - task: Maven@3
+         inputs:
+           mavenPomFile: 'pom.xml'
+           javaHomeOption: 'JDKVersion'
+           jdkVersionOption: 'default'
+           options: compile exec:java -Dexec.mainClass="HelloWorld"
+           publishJUnitResults: false
